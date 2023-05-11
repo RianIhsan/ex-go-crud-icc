@@ -7,6 +7,7 @@ import (
 )
 
 func ReadAll(c *fiber.Ctx) error {
+	c.Set("Access-Control-Allow-Origin", "http://localhost:5173")
 	var data []models.User
 
 	config.DB.Find(&data)
